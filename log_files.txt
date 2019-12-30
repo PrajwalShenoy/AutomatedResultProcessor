@@ -83,3 +83,121 @@ total number of faults = 5
 1DS16EC421
 1DS16EC442
 Time taken: 392.97410011291504seconds
+--------------------------------------------------------
+processing of semester: 6
+2019-12-30 22:00:29
+total number of success = 227
+total number of faults = 14
+1DS17EC418
+1DS17EC426
+1DS17EC430
+1DS17EC434
+1DS17EC437
+1DS17EC439
+1DS17EC441
+1DS16EC155
+1DS17EC412
+1DS17EC424
+1DS17EC442
+1DS17EC432
+1DS17EC436
+1DS17EC448
+Time taken: 313.45136308670044seconds
+--------------------------------------------------------
+processing of semester: 4
+2019-12-30 22:14:16
+total number of success = 277
+total number of faults = 2
+1DS16EC163
+1DS17EC721
+Time taken: 344.9340705871582seconds
+--------------------------------------------------------
+processing of semester: 4
+2019-12-30 22:55:03
+total number of success = 270
+total number of faults = 9
+1DS16EC051
+1DS16EC105
+1DS15EC154
+1DS16EC163
+1DS17EC407
+1DS17EC427
+1DS16EC708
+1DS16EC727
+1DS17EC721
+Time taken: 434.1160569190979seconds
+--------------------------------------------------------
+processing of semester: 2
+2019-12-30 23:04:32
+total number of success = 0
+total number of faults = 0
+Time taken: 0.0006940364837646484seconds
+--------------------------------------------------------
+processing of semester: 2
+2019-12-30 23:05:14
+total number of success = 0
+total number of faults = 0
+Time taken: 0.0003867149353027344seconds
+--------------------------------------------------------
+processing of semester: 2
+2019-12-30 23:11:30
+total number of success = 216
+total number of faults = 0
+Time taken: 331.8916575908661seconds
+--------------------------------------------------------
+processing of semester: 4
+2019-12-30 23:20:07
+total number of success = 270
+total number of faults = 9
+1DS16EC051
+1DS16EC105
+1DS15EC154
+1DS16EC163
+1DS17EC407
+1DS17EC427
+1DS16EC708
+1DS16EC727
+1DS17EC721
+Time taken: 438.8990499973297seconds
+--------------------------------------------------------
+processing of semester: 6
+2019-12-30 23:29:56
+total number of success = 227
+total number of faults = 14
+1DS17EC418
+1DS17EC426
+1DS17EC430
+1DS17EC434
+1DS17EC437
+1DS17EC439
+1DS17EC441
+1DS16EC155
+1DS17EC412
+1DS17EC424
+1DS17EC442
+1DS17EC432
+1DS17EC436
+1DS17EC448
+Time taken: 357.6002836227417seconds
+--------------------------------------------------------
+processing of semester: 8
+2019-12-30 23:36:43
+total number of success = 254
+total number of faults = 5
+1DS16EC407
+1DS16EC413
+1DS16EC419
+1DS16EC421
+1DS16EC442
+Time taken: 372.48944997787476seconds
+--------------------------------------------------------
+processing of semester: 8
+2019-12-30 23:52:06
+total number of success = 254
+total number of faults = 5
+1DS16EC407
+1DS16EC413
+1DS16EC419
+1DS16EC421
+1DS16EC442
+Time taken: 324.7551341056824seconds
