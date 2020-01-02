@@ -1,0 +1,52 @@
+--------------------------------------------------------
+processing of semester: 2
+2020-01-03 01:53:45
+total number of success = 216
+total number of faults = 0
+Time taken: 704.552252292633seconds
+--------------------------------------------------------
+processing of semester: 6
+2020-01-03 01:55:36
+total number of success = 227
+total number of faults = 14
+1DS17EC418
+1DS17EC426
+1DS17EC430
+1DS17EC434
+1DS17EC437
+1DS17EC439
+1DS17EC441
+1DS16EC155
+1DS17EC412
+1DS17EC424
+1DS17EC442
+1DS17EC432
+1DS17EC436
+1DS17EC448
+Time taken: 788.6537125110626seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-01-03 01:56:05
+total number of success = 254
+total number of faults = 5
+1DS16EC407
+1DS16EC413
+1DS16EC419
+1DS16EC421
+1DS16EC442
+Time taken: 801.0766656398773seconds
+--------------------------------------------------------
+processing of semester: 4
+2020-01-03 01:56:31
+total number of success = 270
+total number of faults = 9
+1DS16EC051
+1DS16EC105
+1DS15EC154
+1DS16EC163
+1DS17EC407
+1DS17EC427
+1DS16EC708
+1DS16EC727
+1DS17EC721
+Time taken: 856.0248303413391seconds
