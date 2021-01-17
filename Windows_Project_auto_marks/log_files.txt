@@ -1,0 +1,1074 @@
+--------------------------------------------------------
+processing of semester: 2
+2020-01-03 01:53:45
+total number of success = 216
+total number of faults = 0
+Time taken: 704.552252292633seconds
+--------------------------------------------------------
+processing of semester: 6
+2020-01-03 01:55:36
+total number of success = 227
+total number of faults = 14
+1DS17EC418
+1DS17EC426
+1DS17EC430
+1DS17EC434
+1DS17EC437
+1DS17EC439
+1DS17EC441
+1DS16EC155
+1DS17EC412
+1DS17EC424
+1DS17EC442
+1DS17EC432
+1DS17EC436
+1DS17EC448
+Time taken: 788.6537125110626seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-01-03 01:56:05
+total number of success = 254
+total number of faults = 5
+1DS16EC407
+1DS16EC413
+1DS16EC419
+1DS16EC421
+1DS16EC442
+Time taken: 801.0766656398773seconds
+--------------------------------------------------------
+processing of semester: 4
+2020-01-03 01:56:31
+total number of success = 270
+total number of faults = 9
+1DS16EC051
+1DS16EC105
+1DS15EC154
+1DS16EC163
+1DS17EC407
+1DS17EC427
+1DS16EC708
+1DS16EC727
+1DS17EC721
+Time taken: 856.0248303413391seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-01-03 10:35:07
+total number of success = 254
+total number of faults = 5
+1DS16EC407
+1DS16EC413
+1DS16EC419
+1DS16EC421
+1DS16EC442
+Time taken: 377.03831696510315seconds
+--------------------------------------------------------
+processing of semester: 3
+2020-01-20 19:21:22
+total number of success = 0
+total number of faults = 0
+Time taken: 0.2719876766204834seconds
+--------------------------------------------------------
+processing of semester: 5
+2020-01-20 19:21:32
+total number of success = 0
+total number of faults = 0
+Time taken: 0.0025560855865478516seconds
+--------------------------------------------------------
+processing of semester: 3
+2020-01-20 19:31:53
+total number of success = 0
+total number of faults = 0
+Time taken: 0.0028541088104248047seconds
+--------------------------------------------------------
+processing of semester: 4
+2020-01-20 19:43:35
+total number of success = 213
+total number of faults = 79
+1DS18EC033
+1DS18EC036
+1DS18EC053
+19BEEC405
+19BEEC407
+19BEEC409
+19BEEC413
+19BEEC419
+19BEEC422
+19BEEC423
+19BEEC427
+19BEEC429
+19BEEC432
+19BEEC434
+19BEEC436
+19BEEC439
+19BEEC440
+19BEEC443
+1DS16EC414
+1DS17EC080
+1DS18EE058
+1DS17EC434
+19BEEC412
+1DS18EC065
+19BEEC400
+19BEEC401
+19BEEC403
+19BEEC414
+19BEEC415
+19BEEC417
+19BEEC421
+19BEEC424
+19BEEC425
+19BEEC426
+19BEEC433
+19BEEC435
+19BEEC437
+19BEEC438
+19BEEC441
+1DS17EC102
+1DS18EE052
+1DS18IM032
+1DS17EC016
+1DS18EC448
+1DS18EC404
+1DS18EC132
+1DS16EC163
+19BEEC406
+19BEEC402
+19BEEC404
+19BEEC408
+19BEEC410
+19BEEC411
+19BEEC416
+19BEEC418
+19BEEC420
+19BEEC428
+19BEEC430
+19BEEC431
+19BEEC442
+1DS18EE003
+1DS18EIM017
+1DS18ME028
+1DS18EC430
+1DS18EC451
+1DS18EC455
+1DS18EC437
+1DS18EC724
+19BEEC2729
+19BEEC2746
+19BEEC2747
+19BEEC2745
+19BEEC2749
+19BEEC2750
+1DS18EC462
+1DS18EC463
+1DS18EC465
+1DS18EC460
+1DS17EC703
+Time taken: 573.6760010719299seconds
+--------------------------------------------------------
+processing of semester: 3
+2020-01-20 23:07:38
+total number of success = 213
+total number of faults = 79
+1DS18EC033
+1DS18EC036
+1DS18EC053
+19BEEC405
+19BEEC407
+19BEEC409
+19BEEC413
+19BEEC419
+19BEEC422
+19BEEC423
+19BEEC427
+19BEEC429
+19BEEC432
+19BEEC434
+19BEEC436
+19BEEC439
+19BEEC440
+19BEEC443
+1DS16EC414
+1DS17EC080
+1DS18EE058
+1DS17EC434
+19BEEC412
+1DS18EC065
+19BEEC400
+19BEEC401
+19BEEC403
+19BEEC414
+19BEEC415
+19BEEC417
+19BEEC421
+19BEEC424
+19BEEC425
+19BEEC426
+19BEEC433
+19BEEC435
+19BEEC437
+19BEEC438
+19BEEC441
+1DS17EC102
+1DS18EE052
+1DS18IM032
+1DS17EC016
+1DS18EC448
+1DS18EC404
+1DS18EC132
+1DS16EC163
+19BEEC406
+19BEEC402
+19BEEC404
+19BEEC408
+19BEEC410
+19BEEC411
+19BEEC416
+19BEEC418
+19BEEC420
+19BEEC428
+19BEEC430
+19BEEC431
+19BEEC442
+1DS18EE003
+1DS18EIM017
+1DS18ME028
+1DS18EC430
+1DS18EC451
+1DS18EC455
+1DS18EC437
+1DS18EC724
+19BEEC2729
+19BEEC2746
+19BEEC2747
+19BEEC2745
+19BEEC2749
+19BEEC2750
+1DS18EC462
+1DS18EC463
+1DS18EC465
+1DS18EC460
+1DS17EC703
+Time taken: 411.5116288661957seconds
+--------------------------------------------------------
+processing of semester: 5
+2020-01-20 23:12:04
+total number of success = 0
+total number of faults = 0
+Time taken: 0.002791166305541992seconds
+--------------------------------------------------------
+processing of semester: 5
+2020-01-20 23:40:38
+total number of success = 246
+total number of faults = 42
+1DS16EC163
+1DS17EC003
+1DS17EC016
+1DS17EC018
+1DS17EC035
+1DS18EC405
+1DS18EC423
+1DS18EC426
+1DS18EC437
+1DS18EC455
+1DS14EC009
+1DS17EC080
+1DS18EC404
+1DS18EC408
+1DS16EC102
+1DS17EC427
+1DS18EC430
+1DS18EC435
+1DS18EC439
+1DS18EC448
+1DS18EC451
+1DS17EC408
+1DS15EC023
+1DS15EC139
+1DS15EC074
+1DS17EC434
+1DS17EC439
+1DS16EC448
+1DS16EC708
+1DS17EC703
+1DS17EC714
+1DS17EC741
+1DS17EC433
+1DS18EC458
+1DS18EC459
+1DS18EC460
+1DS18EC462
+1DS18EC463
+1DS18EC465
+1DS15EC728
+1DS16EC715
+1DS15EC733
+Time taken: 424.95547747612seconds
+--------------------------------------------------------
+processing of semester: 7
+2020-01-21 00:20:17
+total number of success = 230
+total number of faults = 15
+1DS14EC003
+1DS15EC074
+1DS15EC095
+1DS16EC044
+1DS17EC408
+1DS16EC102
+1DS17EC419
+1DS17EC434
+1DS17EC439
+1DS17EC440
+1DS15EC733
+1DS16EC715
+1DS16EC747
+1DS17EC448
+1DS15EC728
+Time taken: 351.05748295783997seconds
+--------------------------------------------------------
+processing of semester: 3
+2020-01-21 23:45:48
+total number of success = 269
+total number of faults = 0
+Time taken: 421.44298791885376seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-05-15 02:26:13
+total number of success = 216
+total number of faults = 0
+Time taken: 354.08642768859863seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-05-15 09:57:34
+total number of success = 0
+total number of faults = 216
+1DS18EC001
+1DS18EC002
+1DS18EC003
+1DS18EC004
+1DS18EC005
+1DS18EC006
+1DS18EC007
+1DS18EC008
+1DS18EC009
+1DS18EC010
+1DS18EC011
+1DS18EC012
+1DS18EC013
+1DS18EC014
+1DS18EC015
+1DS18EC016
+1DS18EC017
+1DS18EC018
+1DS18EC019
+1DS18EC020
+1DS18EC021
+1DS18EC022
+1DS18EC023
+1DS18EC024
+1DS18EC025
+1DS18EC026
+1DS18EC027
+1DS18EC028
+1DS18EC029
+1DS18EC030
+1DS18EC031
+1DS18EC032
+1DS18EC033
+1DS18EC034
+1DS18EC035
+1DS18EC036
+1DS18EC037
+1DS18EC038
+1DS18EC039
+1DS18EC040
+1DS18EC041
+1DS18EC042
+1DS18EC043
+1DS18EC044
+1DS18EC045
+1DS18EC046
+1DS18EC047
+1DS18EC048
+1DS18EC049
+1DS18EC050
+1DS18EC051
+1DS18EC052
+1DS18EC053
+1DS18EC054
+1DS18EC055
+1DS18EC056
+1DS18EC057
+1DS18EC058
+1DS18EC059
+1DS18EC060
+1DS18EC061
+1DS18EC062
+1DS18EC063
+1DS18EC064
+1DS18EC065
+1DS18EC066
+1DS18EC067
+1DS18EC068
+1DS18EC069
+1DS18EC070
+1DS18EC071
+1DS18EC072
+1DS18EC073
+1DS18EC074
+1DS18EC075
+1DS18EC076
+1DS18EC077
+1DS18EC078
+1DS18EC079
+1DS18EC080
+1DS18EC081
+1DS18EC082
+1DS18EC083
+1DS18EC084
+1DS18EC085
+1DS18EC086
+1DS18EC087
+1DS18EC088
+1DS18EC089
+1DS18EC090
+1DS18EC091
+1DS18EC092
+1DS18EC093
+1DS18EC094
+1DS18EC095
+1DS18EC096
+1DS18EC097
+1DS18EC098
+1DS18EC099
+1DS18EC100
+1DS18EC101
+1DS18EC102
+1DS18EC103
+1DS18EC104
+1DS18EC105
+1DS18EC106
+1DS18EC107
+1DS18EC108
+1DS18EC109
+1DS18EC110
+1DS18EC111
+1DS18EC112
+1DS18EC113
+1DS18EC114
+1DS18EC115
+1DS18EC116
+1DS18EC117
+1DS18EC118
+1DS18EC119
+1DS18EC120
+1DS18EC121
+1DS18EC122
+1DS18EC123
+1DS18EC124
+1DS18EC125
+1DS18EC126
+1DS18EC127
+1DS18EC128
+1DS18EC129
+1DS18EC130
+1DS18EC131
+1DS18EC132
+1DS18EC133
+1DS18EC134
+1DS18EC135
+1DS18EC136
+1DS18EC137
+1DS18EC138
+1DS18EC139
+1DS18EC140
+1DS18EC141
+1DS18EC142
+1DS18EC143
+1DS18EC144
+1DS18EC145
+1DS18EC146
+1DS18EC147
+1DS18EC148
+1DS18EC149
+1DS18EC150
+1DS18EC151
+1DS18EC152
+1DS18EC153
+1DS18EC154
+1DS18EC155
+1DS18EC156
+1DS18EC157
+1DS18EC700
+1DS18EC701
+1DS18EC702
+1DS18EC703
+1DS18EC704
+1DS18EC705
+1DS18EC706
+1DS18EC707
+1DS18EC708
+1DS18EC709
+1DS18EC710
+1DS18EC711
+1DS18EC712
+1DS18EC713
+1DS18EC714
+1DS18EC715
+1DS18EC716
+1DS18EC717
+1DS18EC718
+1DS18EC719
+1DS18EC720
+1DS18EC721
+1DS18EC722
+1DS18EC723
+1DS18EC724
+1DS18EC725
+1DS18EC726
+1DS18EC727
+1DS18EC728
+1DS18EC729
+1DS18EC730
+1DS18EC731
+1DS18EC732
+1DS18EC733
+1DS18EC734
+1DS18EC735
+1DS18EC736
+1DS18EC737
+1DS18EC738
+1DS18EC739
+1DS18EC740
+1DS18EC741
+1DS18EC742
+1DS18EC743
+1DS18EC744
+1DS18EC745
+1DS18EC746
+1DS18EC747
+1DS18EC748
+1DS18EC749
+1DS18EC750
+1DS18EC751
+1DS18EC752
+1DS18EC753
+1DS18EC754
+1DS18EC755
+1DS18EC756
+1DS18EC757
+1DS18EC758
+Time taken: 5.535079002380371seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-05-15 10:03:43
+total number of success = 0
+total number of faults = 216
+1DS18EC001
+1DS18EC002
+1DS18EC003
+1DS18EC004
+1DS18EC005
+1DS18EC006
+1DS18EC007
+1DS18EC008
+1DS18EC009
+1DS18EC010
+1DS18EC011
+1DS18EC012
+1DS18EC013
+1DS18EC014
+1DS18EC015
+1DS18EC016
+1DS18EC017
+1DS18EC018
+1DS18EC019
+1DS18EC020
+1DS18EC021
+1DS18EC022
+1DS18EC023
+1DS18EC024
+1DS18EC025
+1DS18EC026
+1DS18EC027
+1DS18EC028
+1DS18EC029
+1DS18EC030
+1DS18EC031
+1DS18EC032
+1DS18EC033
+1DS18EC034
+1DS18EC035
+1DS18EC036
+1DS18EC037
+1DS18EC038
+1DS18EC039
+1DS18EC040
+1DS18EC041
+1DS18EC042
+1DS18EC043
+1DS18EC044
+1DS18EC045
+1DS18EC046
+1DS18EC047
+1DS18EC048
+1DS18EC049
+1DS18EC050
+1DS18EC051
+1DS18EC052
+1DS18EC053
+1DS18EC054
+1DS18EC055
+1DS18EC056
+1DS18EC057
+1DS18EC058
+1DS18EC059
+1DS18EC060
+1DS18EC061
+1DS18EC062
+1DS18EC063
+1DS18EC064
+1DS18EC065
+1DS18EC066
+1DS18EC067
+1DS18EC068
+1DS18EC069
+1DS18EC070
+1DS18EC071
+1DS18EC072
+1DS18EC073
+1DS18EC074
+1DS18EC075
+1DS18EC076
+1DS18EC077
+1DS18EC078
+1DS18EC079
+1DS18EC080
+1DS18EC081
+1DS18EC082
+1DS18EC083
+1DS18EC084
+1DS18EC085
+1DS18EC086
+1DS18EC087
+1DS18EC088
+1DS18EC089
+1DS18EC090
+1DS18EC091
+1DS18EC092
+1DS18EC093
+1DS18EC094
+1DS18EC095
+1DS18EC096
+1DS18EC097
+1DS18EC098
+1DS18EC099
+1DS18EC100
+1DS18EC101
+1DS18EC102
+1DS18EC103
+1DS18EC104
+1DS18EC105
+1DS18EC106
+1DS18EC107
+1DS18EC108
+1DS18EC109
+1DS18EC110
+1DS18EC111
+1DS18EC112
+1DS18EC113
+1DS18EC114
+1DS18EC115
+1DS18EC116
+1DS18EC117
+1DS18EC118
+1DS18EC119
+1DS18EC120
+1DS18EC121
+1DS18EC122
+1DS18EC123
+1DS18EC124
+1DS18EC125
+1DS18EC126
+1DS18EC127
+1DS18EC128
+1DS18EC129
+1DS18EC130
+1DS18EC131
+1DS18EC132
+1DS18EC133
+1DS18EC134
+1DS18EC135
+1DS18EC136
+1DS18EC137
+1DS18EC138
+1DS18EC139
+1DS18EC140
+1DS18EC141
+1DS18EC142
+1DS18EC143
+1DS18EC144
+1DS18EC145
+1DS18EC146
+1DS18EC147
+1DS18EC148
+1DS18EC149
+1DS18EC150
+1DS18EC151
+1DS18EC152
+1DS18EC153
+1DS18EC154
+1DS18EC155
+1DS18EC156
+1DS18EC157
+1DS18EC700
+1DS18EC701
+1DS18EC702
+1DS18EC703
+1DS18EC704
+1DS18EC705
+1DS18EC706
+1DS18EC707
+1DS18EC708
+1DS18EC709
+1DS18EC710
+1DS18EC711
+1DS18EC712
+1DS18EC713
+1DS18EC714
+1DS18EC715
+1DS18EC716
+1DS18EC717
+1DS18EC718
+1DS18EC719
+1DS18EC720
+1DS18EC721
+1DS18EC722
+1DS18EC723
+1DS18EC724
+1DS18EC725
+1DS18EC726
+1DS18EC727
+1DS18EC728
+1DS18EC729
+1DS18EC730
+1DS18EC731
+1DS18EC732
+1DS18EC733
+1DS18EC734
+1DS18EC735
+1DS18EC736
+1DS18EC737
+1DS18EC738
+1DS18EC739
+1DS18EC740
+1DS18EC741
+1DS18EC742
+1DS18EC743
+1DS18EC744
+1DS18EC745
+1DS18EC746
+1DS18EC747
+1DS18EC748
+1DS18EC749
+1DS18EC750
+1DS18EC751
+1DS18EC752
+1DS18EC753
+1DS18EC754
+1DS18EC755
+1DS18EC756
+1DS18EC757
+1DS18EC758
+Time taken: 1.4444410800933838seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-05-15 12:59:47
+total number of success = 216
+total number of faults = 0
+Time taken: 337.8856508731842seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 17:57:16
+total number of success = 0
+total number of faults = 0
+Time taken: 0.024905920028686523seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:00:39
+total number of success = 0
+total number of faults = 0
+Time taken: 0.03060460090637207seconds
+--------------------------------------------------------
+processing of semester: 4
+2020-09-12 18:00:48
+total number of success = 0
+total number of faults = 0
+Time taken: 0.027894020080566406seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:05:34
+total number of success = 0
+total number of faults = 0
+Time taken: 0.026000499725341797seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:06:59
+total number of success = 0
+total number of faults = 0
+Time taken: 0.02416706085205078seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:07:25
+total number of success = 0
+total number of faults = 0
+Time taken: 0.03490805625915527seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:08:14
+total number of success = 0
+total number of faults = 0
+Time taken: 0.02468562126159668seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:08:55
+total number of success = 0
+total number of faults = 0
+Time taken: 0.03492426872253418seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:09:34
+total number of success = 0
+total number of faults = 0
+Time taken: 0.029924392700195312seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:10:19
+total number of success = 0
+total number of faults = 0
+Time taken: 0.025902271270751953seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:10:46
+total number of success = 0
+total number of faults = 0
+Time taken: 0.021944761276245117seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:11:10
+total number of success = 0
+total number of faults = 0
+Time taken: 0.023944616317749023seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:11:48
+total number of success = 0
+total number of faults = 0
+Time taken: 0.039891958236694336seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:12:04
+total number of success = 0
+total number of faults = 0
+Time taken: 0.038933753967285156seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:15:16
+total number of success = 0
+total number of faults = 0
+Time taken: 0.021910429000854492seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:16:51
+total number of success = 0
+total number of faults = 0
+Time taken: 0.03789806365966797seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:18:57
+total number of success = 0
+total number of faults = 0
+Time taken: 0.024897098541259766seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:32:18
+total number of success = 0
+total number of faults = 0
+Time taken: 0.023936748504638672seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:32:41
+total number of success = 0
+total number of faults = 0
+Time taken: 0.02344202995300293seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:33:25
+total number of success = 0
+total number of faults = 0
+Time taken: 0.027925729751586914seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:36:42
+total number of success = 0
+total number of faults = 0
+Time taken: 0.09837865829467773seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:56:06
+total number of success = 0
+total number of faults = 2
+1DS18EC001
+1DS18EC002
+Time taken: 2.9253201484680176seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 18:56:34
+total number of success = 0
+total number of faults = 2
+1DS18EC001
+1DS18EC002
+Time taken: 2.9351301193237305seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 19:02:52
+total number of success = 0
+total number of faults = 2
+1DS18EC001
+1DS18EC002
+Time taken: 0.2653696537017822seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 19:03:54
+total number of success = 0
+total number of faults = 2
+1DS18EC001
+1DS18EC002
+Time taken: 0.2524118423461914seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 19:21:09
+total number of success = 0
+total number of faults = 2
+1DS18EC001
+1DS18EC002
+Time taken: 0.37531185150146484seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 19:34:45
+total number of success = 0
+total number of faults = 2
+1DS18EC001
+1DS18EC002
+Time taken: 2.9685091972351074seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-12 19:36:16
+total number of success = 0
+total number of faults = 2
+1DS18EC001
+1DS18EC002
+Time taken: 2.7498927116394043seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-13 02:50:46
+total number of success = 2
+total number of faults = 0
+Time taken: 3.4190711975097656seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-13 03:14:13
+total number of success = 179
+total number of faults = 27
+1DS19EC009
+1DS19EC014
+1DS19EC017
+1DS19EC019
+1DS19EC023
+1DS19EC024
+1DS19EC031
+1DS19EC051
+1DS19EC060
+1DS19EC078
+1DS19EC096
+1DS19EC101
+1DS19EC103
+1DS19EC111
+1DS19EC118
+1DS19EC119
+1DS19EC143
+1DS19EC146
+1DS19EC155
+1DS19EC702
+1DS19EC704
+1DS19EC707
+1DS19EC714
+1DS19EC716
+1DS19EC721
+1DS19EC725
+1DS19EC742
+Time taken: 315.7936341762543seconds
+--------------------------------------------------------
+processing of semester: 2
+2020-09-13 03:30:50
+total number of success = 206
+total number of faults = 0
+Time taken: 263.0746397972107seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-09-14 20:32:18
+total number of success = 228
+total number of faults = 13
+1DS15EC023
+1DS15EC139
+1DS17EC434
+1DS17EC439
+1DS15EC095
+1DS16EC044
+1DS16EC102
+1DS16EC155
+1DS17EC408
+1DS17EC419
+1DS15EC733
+1DS16EC715
+1DS17EC448
+Time taken: 290.49185013771057seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-09-14 20:49:28
+total number of success = 1
+total number of faults = 0
+Time taken: 1.266892671585083seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-09-14 20:50:15
+total number of success = 1
+total number of faults = 0
+Time taken: 1.2801556587219238seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-09-14 20:50:56
+total number of success = 1
+total number of faults = 0
+Time taken: 1.2476444244384766seconds
+--------------------------------------------------------
+processing of semester: 8
+2020-09-14 20:56:26
+total number of success = 228
+total number of faults = 16
+1DS13EC057
+1DS14EC003
+1DS15EC074
+1DS15EC095
+1DS16EC044
+1DS17EC408
+1DS14EC105
+1DS16EC102
+1DS17EC419
+1DS17EC434
+1DS17EC439
+1DS17EC440
+1DS15EC733
+1DS16EC715
+1DS16EC718
+1DS17EC448
+Time taken: 285.9711756706238seconds
