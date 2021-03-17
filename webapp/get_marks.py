@@ -26,16 +26,11 @@ ALLOWED_EXTENSIONS = {'txt'}
 
 class uploadFile(Resource):
     def post(self):
-        print('.............--.......')
         try:
             file = request.files['student_list']
-            print('.')
             if file and allowed_filename(file.filename):
-                print('..')
                 filename = secure_filename(file.filename)
-                print('...')
                 file.save(os.path.join(UPLOAD_FOLDER, filename))
-                print('....')
                 return {'status': filename + ' saved successfully'}
         except:
             return {'error': 'Something is wrong'}
