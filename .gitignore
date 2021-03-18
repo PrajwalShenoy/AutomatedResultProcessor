@@ -1,1 +1,3 @@
 venv
+webapp/downloads/*
+webapp/uploads/*
