@@ -2,3 +2,6 @@ Flask==1.1.2
 Flask-RESTful==0.3.8
 requests==2.25.1
 bs4==0.0.1
+pandas==1.2.3
+PyPDF2==1.26.0
+tabula==1.0.5
