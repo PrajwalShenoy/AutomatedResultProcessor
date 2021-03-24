@@ -9,8 +9,24 @@ import requests
 import PyPDF2
 import re
 
-class veri(Resource):
+reg_ex = {0: "[1-9]{3}[A-Z]{2}[0-9][A-Z]{5}",
+          1: "[A-Z]{2,3}[1-9]{2}",
+          2: "[1-9]{2}[A-Z]{3,5}[1-9]{2,3}",
+          3: "[A-Z]{6}[0-9]{2,3}"}
 
+for i in range(pdf.getNumPages()):
+    text = pdf.getPage(i).extractText()
+    match = re.search("(?<=GRADE POINTS1).*Letter Grades", text)
+    reduced_text = text[match.span()[0]:match.span()[1]]
+    lens = []
+    for key, val in reg_ex.items():
+            lens.append(len(re.split(val, reduced_text)[1:]))
+            # print(key,val)
+            # print(re.findall(val, reduced_text), len(re.findall(val, reduced_text)))
+            # print(re.split(val, reduced_text)[1:], len(re.split(val, reduced_text)[1:]))
+    print(reg_ex[lens.index(max(lens))])
+    print(re.split(reg_ex[lens.index(max(lens))], reduced_text)[1:])
+    print("----------------")
 
 def verify_downloads(student_file):
     file_list = os.listdir('downloads')
@@ -34,7 +50,8 @@ def process_marks(student_file):
 def process_page(pdf, pg_num, df):
 
 
-def check_and_columns():
+def select_regex(pdf_text):
+
 
 
 # regular expressions 
@@ -77,3 +94,4 @@ def check_and_columns():
 
 # os.listdir(os.path.abspath('downloads'))
 # ['file2', 'file1', 'file3']
+
