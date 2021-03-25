@@ -9,24 +9,24 @@ import requests
 import PyPDF2
 import re
 
-reg_ex = {0: "[1-9]{3}[A-Z]{2}[0-9][A-Z]{5}",
+reg_ex = {0: "[1-9]{2}[A-Z]{2}[0-9][A-Z]{5}",
           1: "[A-Z]{2,3}[1-9]{2}",
           2: "[1-9]{2}[A-Z]{3,5}[1-9]{2,3}",
           3: "[A-Z]{6}[0-9]{2,3}"}
 
-for i in range(pdf.getNumPages()):
-    text = pdf.getPage(i).extractText()
-    match = re.search("(?<=GRADE POINTS1).*Letter Grades", text)
-    reduced_text = text[match.span()[0]:match.span()[1]]
-    lens = []
-    for key, val in reg_ex.items():
-            lens.append(len(re.split(val, reduced_text)[1:]))
-            # print(key,val)
-            # print(re.findall(val, reduced_text), len(re.findall(val, reduced_text)))
-            # print(re.split(val, reduced_text)[1:], len(re.split(val, reduced_text)[1:]))
-    print(reg_ex[lens.index(max(lens))])
-    print(re.split(reg_ex[lens.index(max(lens))], reduced_text)[1:])
-    print("----------------")
+# for i in range(pdf.getNumPages()):
+#     text = pdf.getPage(i).extractText()
+#     match = re.search("(?<=GRADE POINTS1).*Letter Grades", text)
+#     reduced_text = text[match.span()[0]:match.span()[1]]
+#     lens = []
+#     for key, val in reg_ex.items():
+#             lens.append(len(re.split(val, reduced_text)[1:]))
+#             # print(key,val)
+#             # print(re.findall(val, reduced_text), len(re.findall(val, reduced_text)))
+#             # print(re.split(val, reduced_text)[1:], len(re.split(val, reduced_text)[1:]))
+#     print(reg_ex[lens.index(max(lens))])
+#     print(re.split(reg_ex[lens.index(max(lens))], reduced_text)[1:])
+#     print("----------------")
 
 def verify_downloads(student_file):
     file_list = os.listdir('downloads')
@@ -42,23 +42,67 @@ def process_marks(student_file):
     df = pd.DataFrame()
     with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
         for student in student_list:
-            pdf = PyPDF2.PdfFileReader(os.path.join(DOWNLOADS_FOLDER, student.rstrip()+'.pdf'))
-            num_of_pages = pdf.getNumPages()
-            for pg_num in range(num_of_pages):
-                process_page(pdf, pg_num, df)
+            try:
+                pdf = PyPDF2.PdfFileReader(os.path.join(DOWNLOADS_FOLDER, student.rstrip()+'.pdf'))
+                num_of_pages = pdf.getNumPages()
+                for pg_num in range(num_of_pages):
+                    print(student, end='')
+                    df = process_page(pdf, pg_num, df, student)
+            except:
+                print("Could not process", student)
+    return df
 
-def process_page(pdf, pg_num, df):
+def process_page(pdf, pg_num, df, student):
+    pdf_text = pdf.getPage(pg_num).extractText()
+    match = re.search("(?<=GRADE POINTS1).*Letter Grades", pdf_text)
+    reduced_text = pdf_text[match.span()[0]:match.span()[1]]
+    split_match = re.split(select_regex(reduced_text), reduced_text)[1:]
+    split_match[-1], gpa = split_match[-1].split('SGPA')
+    split_match = [subject[:-1] for subject in split_match[:-1]] + [split_match[-1]]
+    split_match = [re.split("[0-9]{1}[A-Z]{1,2}[+]{0,1}", subject) for subject in split_match]
+    df = check_for_sub_heading(split_match, df)
+    df = update_marks(split_match, df, student)
+    print(split_match)
+    print()
+    return df
 
+def select_regex(reduced_text):
+    lens = []
+    for key, val in reg_ex.items():
+        lens.append(len(re.split(val, reduced_text)[1:]))
+    return reg_ex[lens.index(max(lens))]
 
-def select_regex(pdf_text):
+def check_for_sub_heading(split_match, df):
+    heading = [split[0] for split in split_match]
+    for sub in heading:
+        if sub not in list(df.columns):
+            df[sub] = None
+    return df
 
+def update_marks(split_match, df, student):
+    for subject in split_match:
+        df.loc[student, subject[0]] = subject[1]
+    return df
 
+# df = process_marks(student_file)
+# for pg_num in range(num_of_pages):
+#     pdf_text = pdf.getPage(pg_num).extractText()
+
+#     match = re.search("(?<=GRADE POINTS1).*Letter Grades", pdf_text)
+#     reduced_text = pdf_text[match.span()[0]:match.span()[1]]
+#     lens = []
+#     for key, val in reg_ex.items():
+#             lens.append(len(re.split(val, reduced_text)[1:]))
+#     print(re.split(reg_ex[lens.index(max(lens))], reduced_text)[1:])
 
 # regular expressions 
 # "Student:.*USN"
 # "Roll No:.*Branch"
 # "GRADE POINTS.*Letter Grades"
 # "[0-9]{3}[A-Z]{2}[0-9][A-Z]{5}"
+
+# regex for splitting subject into marks
+# "[0-9]{1}[A-Z]{1}[+]{0,1}"
 
 # df['ENGINEERING MATHEMATICS II'] = None
 # df['ENGINEERING PHYSICS'] = None

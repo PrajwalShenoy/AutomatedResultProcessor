@@ -66,7 +66,7 @@ def get_marks(student_file):
             }
 
 api.add_resource(HelloWorld, '/', '/hello')
-api.add_resource(uploadFile, '/download-results')
+api.add_resource(downloadResults, '/download-results')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
