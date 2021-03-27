@@ -1,4 +1,6 @@
 venv
 webapp/downloads/*
 webapp/uploads/*
+webapp/reports/*
 webapp/__pycache__
+webapp/.~lock*

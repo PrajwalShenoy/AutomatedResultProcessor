@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, send_file, render_template, make_response
 from flask_restful import Resource, Api, reqparse
 from werkzeug.utils import secure_filename
 from get_marks import receive_upload, allowed_filename
@@ -9,51 +9,77 @@ import requests
 import PyPDF2
 import re
 
+REPORTS_FOLDER = os.path.abspath('reports')
+
+app = Flask(__name__)
+api = Api(app)
+
 reg_ex = {0: "[1-9]{2}[A-Z]{2}[0-9][A-Z]{5}",
           1: "[A-Z]{2,3}[1-9]{2}",
           2: "[1-9]{2}[A-Z]{3,5}[1-9]{2,3}",
           3: "[A-Z]{6}[0-9]{2,3}"}
 
-# for i in range(pdf.getNumPages()):
-#     text = pdf.getPage(i).extractText()
-#     match = re.search("(?<=GRADE POINTS1).*Letter Grades", text)
-#     reduced_text = text[match.span()[0]:match.span()[1]]
-#     lens = []
-#     for key, val in reg_ex.items():
-#             lens.append(len(re.split(val, reduced_text)[1:]))
-#             # print(key,val)
-#             # print(re.findall(val, reduced_text), len(re.findall(val, reduced_text)))
-#             # print(re.split(val, reduced_text)[1:], len(re.split(val, reduced_text)[1:]))
-#     print(reg_ex[lens.index(max(lens))])
-#     print(re.split(reg_ex[lens.index(max(lens))], reduced_text)[1:])
-#     print("----------------")
+headers = {'Content-Type': 'text/html'}
+html_page = '''
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=student_list>
+      <input type=submit value=Upload>
+    </form>
+    '''
+
+class ProcessMarks(Resource):
+    def post(self):
+        try:
+            files_uploaded = receive_upload(request)
+            if files_uploaded[0]:
+                if verify_downloads(files_uploaded[1]):
+                    df = process_marks(files_uploaded[1])
+                    process_df(df, files_uploaded[1])
+                    return send_file(os.path.join(REPORTS_FOLDER, files_uploaded[1][:-3]+'.csv'))
+                else:
+                    return {'error': 'Some files are not present, please re-download them'}
+            else:
+                return {'error': 'File could not be uploaded'}
+        except:
+            return {'error': 'Something is wrong'}
+    
+    def get(self):
+        return make_response(html_page,200,headers)
+
+def process_df(df, file_name):
+    df.to_csv(os.path.join(REPORTS_FOLDER, file_name[:-3]+'.csv'))
 
 def verify_downloads(student_file):
     file_list = os.listdir('downloads')
     with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
         for student in student_list:
-            if student.rstrip() + '.pdf' file_list:
+            if student.rstrip() + '.pdf' in  file_list:
                 continue
             else:
-                return {'error': 'Some files are not present, please re-download them'}
+                return False
     return True
 
 def process_marks(student_file):
     df = pd.DataFrame()
+    df['Name'] = None
     with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
         for student in student_list:
             try:
                 pdf = PyPDF2.PdfFileReader(os.path.join(DOWNLOADS_FOLDER, student.rstrip()+'.pdf'))
                 num_of_pages = pdf.getNumPages()
-                for pg_num in range(num_of_pages):
+                for pg_num in range(num_of_pages):  
                     print(student, end='')
-                    df = process_page(pdf, pg_num, df, student)
+                    df = process_page(pdf, pg_num, df, student.rstrip())
             except:
                 print("Could not process", student)
     return df
 
 def process_page(pdf, pg_num, df, student):
     pdf_text = pdf.getPage(pg_num).extractText()
+    df.loc[student, 'Name'] = re.search("(?<=Student:).*USN", pdf_text).group()[:-3]
     match = re.search("(?<=GRADE POINTS1).*Letter Grades", pdf_text)
     reduced_text = pdf_text[match.span()[0]:match.span()[1]]
     split_match = re.split(select_regex(reduced_text), reduced_text)[1:]
@@ -84,7 +110,13 @@ def update_marks(split_match, df, student):
         df.loc[student, subject[0]] = subject[1]
     return df
 
+api.add_resource(ProcessMarks, '/process-marks')
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True, port=5001)
+
 # df = process_marks(student_file)
+# df.to_csv('report.csv')
 # for pg_num in range(num_of_pages):
 #     pdf_text = pdf.getPage(pg_num).extractText()
 
@@ -97,6 +129,7 @@ def update_marks(split_match, df, student):
 
 # regular expressions 
 # "Student:.*USN"
+# "(?<=Student:).*USN"
 # "Roll No:.*Branch"
 # "GRADE POINTS.*Letter Grades"
 # "[0-9]{3}[A-Z]{2}[0-9][A-Z]{5}"
@@ -139,3 +172,16 @@ def update_marks(split_match, df, student):
 # os.listdir(os.path.abspath('downloads'))
 # ['file2', 'file1', 'file3']
 
+# for i in range(pdf.getNumPages()):
+#     text = pdf.getPage(i).extractText()
+#     match = re.search("(?<=GRADE POINTS1).*Letter Grades", text)
+#     reduced_text = text[match.span()[0]:match.span()[1]]
+#     lens = []
+#     for key, val in reg_ex.items():
+#             lens.append(len(re.split(val, reduced_text)[1:]))
+#             # print(key,val)
+#             # print(re.findall(val, reduced_text), len(re.findall(val, reduced_text)))
+#             # print(re.split(val, reduced_text)[1:], len(re.split(val, reduced_text)[1:]))
+#     print(reg_ex[lens.index(max(lens))])
+#     print(re.split(reg_ex[lens.index(max(lens))], reduced_text)[1:])
+#     print("----------------")
