@@ -56,9 +56,7 @@ def verify_downloads(student_file):
     file_list = os.listdir('downloads')
     with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
         for student in student_list:
-            if student.rstrip() + '.pdf' in  file_list:
-                continue
-            else:
+            if student.rstrip() + '.pdf' not in  file_list:
                 return False
     return True
 
