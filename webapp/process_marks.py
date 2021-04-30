@@ -17,7 +17,8 @@ api = Api(app)
 reg_ex = {0: "[1-9]{2}[A-Z]{2}[0-9][A-Z]{5}",
           1: "[A-Z]{2,3}[1-9]{2}",
           2: "[1-9]{2}[A-Z]{3,5}[1-9]{2,3}",
-          3: "[A-Z]{6}[0-9]{2,3}"}
+          3: "[A-Z]{6}[0-9]{2,3}",
+          4: "[1-9]{2}[A-Z]{2}[0-9][A-Z]{4,5}[0-9]{0,1}"}
 
 headers = {'Content-Type': 'text/html'}
 html_page = '''
@@ -56,9 +57,7 @@ def verify_downloads(student_file):
     file_list = os.listdir('downloads')
     with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
         for student in student_list:
-            if student.rstrip() + '.pdf' in  file_list:
-                continue
-            else:
+            if student.rstrip() + '.pdf' not in  file_list:
                 return False
     return True
 

@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, send_file, render_template, make_response
 from flask_restful import Resource, Api, reqparse
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
@@ -12,6 +12,17 @@ UPLOAD_FOLDER = os.path.abspath('uploads')
 DOWNLOADS_FOLDER = os.path.abspath('downloads')
 ALLOWED_EXTENSIONS = {'txt'}
 RESULT_URL = "https://www.dsce.edu.in/results"
+
+headers = {'Content-Type': 'text/html'}
+html_page = '''
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=student_list>
+      <input type=submit value=Upload>
+    </form>
+    '''
 
 class HelloWorld(Resource):
     def get(self):
@@ -27,6 +38,8 @@ class downloadResults(Resource):
                 return {'error': 'File could not be uploaded'}
         except:
             return {'error': 'Something is wrong'}
+    def get(self):
+        return make_response(html_page,200,headers)
 
 def receive_upload(request):
     try:
