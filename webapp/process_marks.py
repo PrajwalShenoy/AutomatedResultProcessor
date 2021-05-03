@@ -64,6 +64,7 @@ def verify_downloads(student_file):
 def process_marks(student_file):
     df = pd.DataFrame()
     df['Name'] = None
+    df['SGPA'] = None
     with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
         for student in student_list:
             try:
@@ -82,7 +83,8 @@ def process_page(pdf, pg_num, df, student):
     match = re.search("(?<=GRADE POINTS1).*Letter Grades", pdf_text)
     reduced_text = pdf_text[match.span()[0]:match.span()[1]]
     split_match = re.split(select_regex(reduced_text), reduced_text)[1:]
-    split_match[-1], gpa = split_match[-1].split('SGPA')
+    split_match[-1], sgpa = split_match[-1].split('SGPA')
+    df.loc[student, 'SGPA'] = sgpa.split('L')[0]
     split_match = [subject[:-1] for subject in split_match[:-1]] + [split_match[-1]]
     split_match = [re.split("[0-9]{1}[A-Z]{1,2}[+]{0,1}", subject) for subject in split_match]
     df = check_for_sub_heading(split_match, df)
