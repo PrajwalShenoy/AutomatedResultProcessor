@@ -24,10 +24,6 @@ html_page = '''
     </form>
     '''
 
-class HelloWorld(Resource):
-    def get(self):
-        return {'Greeting': 'Hello There'}
-
 class downloadResults(Resource):
     def post(self):
         try:
@@ -78,8 +74,7 @@ def get_marks(student_file):
             'failed_downloads': failed_downlods
             }
 
-api.add_resource(HelloWorld, '/', '/hello')
-api.add_resource(downloadResults, '/download-results')
+api.add_resource(downloadResults, '/')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True, port=5000)
