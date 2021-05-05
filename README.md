@@ -17,3 +17,27 @@
   - The following .csv file should be downloaded when `upload` button is clicked.
   - Check `./webapp/reports` for the processed .csv files.
 * Remember to stop the running programs when you are done using it. :)
+
+
+Format of the `.txt` file
+```
+1DS15EC023
+1DS15EC139
+1DS16EC011
+1DS16EC014
+1DS16EC015
+1DS16EC023
+1DS16EC034
+1DS16EC037
+1DS16EC041
+1DS16EC047
+1DS16EC048
+1DS16EC050
+1DS16EC056
+1DS16EC059
+1DS16EC062
+1DS16EC065
+1DS16EC066
+1DS16EC067
+1DS16EC072
+```
