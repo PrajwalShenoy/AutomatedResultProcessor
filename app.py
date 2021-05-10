@@ -1,8 +1,6 @@
 from flask import Flask, request, send_file, render_template, make_response
 from flask_restful import Resource, Api, reqparse
 from werkzeug.utils import secure_filename
-from get_marks import receive_upload, allowed_filename
-from get_marks import UPLOAD_FOLDER, DOWNLOADS_FOLDER, ALLOWED_EXTENSIONS
 import pandas as pd
 import os
 import requests
@@ -14,8 +12,8 @@ REPORTS_FOLDER = os.path.abspath('reports')
 app = Flask(__name__)
 api = Api(app)
 
-UPLOAD_FOLDER = os.path.abspath('uploads')
-DOWNLOADS_FOLDER = os.path.abspath('downloads')
+UPLOAD_FOLDER = os.getcwd()
+DOWNLOADS_FOLDER = os.getcwd()
 ALLOWED_EXTENSIONS = {'txt'}
 RESULT_URL = "https://www.dsce.edu.in/results"
 
