@@ -65,10 +65,10 @@ class DownloadResults(Resource):
 
 def receive_upload(request):
     try:
-        file = request.files['student_list']
-        if file and allowed_filename(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(UPLOAD_FOLDER, filename))
+        _file = request.files['student_list']
+        if _file and allowed_filename(_file.filename):
+            filename = secure_filename(_file.filename)
+            _file.save(os.path.join(UPLOAD_FOLDER, filename))
         return True, filename
     except:
         return False, 'false'
