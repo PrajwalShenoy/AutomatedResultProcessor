@@ -123,7 +123,7 @@ def process_df(df, file_name):
     df.to_csv(os.path.join(REPORTS_FOLDER, file_name[:-3]+'.csv'))
 
 def verify_downloads(student_file):
-    file_list = os.listdir('downloads')
+    file_list = os.listdir(DOWNLOADS_FOLDER)
     with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
         for student in student_list:
             if student.rstrip() + '.pdf' not in  file_list:
