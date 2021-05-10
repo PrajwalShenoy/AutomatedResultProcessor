@@ -34,7 +34,7 @@ html_page = '''
       <input type=submit value=Upload>
     </form>
     {}
-    '''.format(os.listdir(os.getcwd()))
+    '''
 
 welcome_header = {'Content-type': 'text/html'}
 welcome_page = '''
@@ -44,11 +44,11 @@ welcome_page = '''
     <a href="https://dsce-results.herokuapp.com/download-pdfs">Download Pre Req</a><br>
     <a href="https://dsce-results.herokuapp.com/process-marks">Download CSV file</a>
     {}
-    '''.format(os.listdir(os.getcwd()))
+    '''
 
 class WelcomePage(Resource):
     def get(self):
-        return make_response(welcome_page,200,welcome_header)
+        return make_response(welcome_page.format(os.listdir(os.getcwd())),200,welcome_header)
 
 class DownloadResults(Resource):
     def post(self):
@@ -117,7 +117,7 @@ class ProcessMarks(Resource):
             return {'error': 'Something is wrong'}
     
     def get(self):
-        return make_response(html_page,200,headers)
+        return make_response(html_page.format(os.listdir(os.getcwd())),200,headers)
 
 def process_df(df, file_name):
     df.to_csv(os.path.join(REPORTS_FOLDER, file_name[:-3]+'.csv'))
