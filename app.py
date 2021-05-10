@@ -1,6 +1,7 @@
 from flask import Flask, request, send_file, render_template, make_response
 from flask_restful import Resource, Api, reqparse
 from werkzeug.utils import secure_filename
+from bs4 import BeautifulSoup
 import pandas as pd
 import os
 import requests
