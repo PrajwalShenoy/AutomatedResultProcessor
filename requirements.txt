@@ -5,3 +5,4 @@ bs4==0.0.1
 pandas==1.2.3
 PyPDF2==1.26.0
 tabula==1.0.5
+gunicorn==20.1.0

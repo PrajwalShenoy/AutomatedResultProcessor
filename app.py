@@ -14,6 +14,11 @@ REPORTS_FOLDER = os.path.abspath('reports')
 app = Flask(__name__)
 api = Api(app)
 
+UPLOAD_FOLDER = os.path.abspath('uploads')
+DOWNLOADS_FOLDER = os.path.abspath('downloads')
+ALLOWED_EXTENSIONS = {'txt'}
+RESULT_URL = "https://www.dsce.edu.in/results"
+
 reg_ex = {0: "[1-9]{2}[A-Z]{2}[0-9][A-Z]{5}",
           1: "[A-Z]{2,3}[1-9]{2}",
           2: "[1-9]{2}[A-Z]{3,5}[1-9]{2,3}",
@@ -30,6 +35,69 @@ html_page = '''
       <input type=submit value=Upload>
     </form>
     '''
+
+welcome_header = {'Content-type': 'text/html'}
+welcome_page = '''
+    <!doctype html>
+    <title>DSCE Results</title>
+    <h1>DSCE Results</h1>
+    <a href="https://dsce-results.herokuapp.com/download-pdfs">Download Pre Req</a><br>
+    <a href="https://dsce-results.herokuapp.com/process-marks">Download CSV file</a>
+    '''
+
+class WelcomePage(Resource):
+    def get(self):
+        return make_response(welcome_page,200,welcome_header)
+
+class DownloadResults(Resource):
+    def post(self):
+        try:
+            files_uploaded = receive_upload(request)
+            if files_uploaded[0]:
+                return get_marks(files_uploaded[1])
+            else:
+                return {'error': 'File could not be uploaded'}
+        except:
+            return {'error': 'Something is wrong'}
+    def get(self):
+        return make_response(html_page,200,headers)
+
+def receive_upload(request):
+    try:
+        file = request.files['student_list']
+        if file and allowed_filename(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(UPLOAD_FOLDER, filename))
+        return True, filename
+    except:
+        return False, 'false'
+
+def allowed_filename(file_name):
+    return file_name.rsplit('.',1)[1].lower() in ALLOWED_EXTENSIONS
+
+def get_download_url():
+    result_html = requests.get(RESULT_URL).content
+    soup = BeautifulSoup(result_html, 'html.parser')
+    for script in soup.find_all('script'):
+        if "Please Enter USN" in str(script):
+            download_link = str(script).split('url')[1].split("'")[1]
+    return download_link
+
+def get_marks(student_file):
+    failed_downloads = []
+    download_link = get_download_url()
+    with open(os.path.join(UPLOAD_FOLDER, student_file)) as student_list:
+            for student in student_list:
+                result = requests.get(download_link + student.rstrip().upper())
+                if result.status_code !=200:
+                    failed_downloads.append(student.rstrip().upper())
+                    continue
+                with open(os.path.join(DOWNLOADS_FOLDER, student.rstrip().upper())+'.pdf', 'wb') as result_file:
+                    result_file.write(result.content)
+    return {'status': filename + ' saved successfully',
+            'downloads': 'Complete',
+            'failed_downloads': failed_downlods
+            }
 
 class ProcessMarks(Resource):
     def post(self):
@@ -111,7 +179,9 @@ def update_marks(split_match, df, student):
         df.loc[student, subject[0]] = subject[1]
     return df
 
-api.add_resource(ProcessMarks, '/')
+api.add_resource(WelcomePage, '/')
+api.add_resource(ProcessMarks, '/process-marks')
+api.add_resource(DownloadResults, '/download-pdfs')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, port=5001)
+    app.run(debug=True)
