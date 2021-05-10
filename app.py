@@ -61,7 +61,7 @@ class DownloadResults(Resource):
         except Exception as err:
             return {'error': str(err)}
     def get(self):
-        return make_response(html_page,200,headers)
+        return make_response(html_page.format(os.listdir(os.getcwd())),200,headers)
 
 def receive_upload(request):
     try:
