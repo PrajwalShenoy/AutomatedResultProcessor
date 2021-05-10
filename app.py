@@ -32,7 +32,8 @@ html_page = '''
       <input type=file name=student_list>
       <input type=submit value=Upload>
     </form>
-    '''
+    {}
+    '''.format(os.listdir(os.getcwd()))
 
 welcome_header = {'Content-type': 'text/html'}
 welcome_page = '''
@@ -41,7 +42,8 @@ welcome_page = '''
     <h1>DSCE Results</h1>
     <a href="https://dsce-results.herokuapp.com/download-pdfs">Download Pre Req</a><br>
     <a href="https://dsce-results.herokuapp.com/process-marks">Download CSV file</a>
-    '''
+    {}
+    '''.format(os.listdir(os.getcwd()))
 
 class WelcomePage(Resource):
     def get(self):
@@ -55,8 +57,8 @@ class DownloadResults(Resource):
                 return get_marks(files_uploaded[1])
             else:
                 return {'error': 'File could not be uploaded'}
-        except:
-            return {'error': 'Something is wrong'}
+        except Exception as err:
+            return {'error': str(err)}
     def get(self):
         return make_response(html_page,200,headers)
 
