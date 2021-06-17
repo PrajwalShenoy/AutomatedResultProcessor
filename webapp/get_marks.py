@@ -36,8 +36,8 @@ class downloadResults(Resource):
                 return get_marks(files_uploaded[1])
             else:
                 return {'error': 'File could not be uploaded'}
-        except:
-            return {'error': 'Something is wrong'}
+        except Exception as e:
+            return {'error': str(e)}
     def get(self):
         return make_response(html_page,200,headers)
 
