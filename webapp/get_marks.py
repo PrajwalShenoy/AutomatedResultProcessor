@@ -1,34 +1,35 @@
-from flask import Flask, request, send_file, render_template, make_response
-from flask_restful import Resource, Api, reqparse
+from flask_restx import Resource, reqparse, Namespace
+from werkzeug.datastructures import FileStorage
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
+from flask import request
 import requests
 import os
 
-app = Flask(__name__)
-api = Api(app)
+
+api = Namespace('getMarks', description="Downloads PDFs for student list")
 
 UPLOAD_FOLDER = os.path.abspath('uploads')
 DOWNLOADS_FOLDER = os.path.abspath('downloads')
 ALLOWED_EXTENSIONS = {'txt'}
 RESULT_URL = "https://www.dsce.edu.in/results"
 
-headers = {'Content-Type': 'text/html'}
-html_page = '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=student_list>
-      <input type=submit value=Upload>
-    </form>
-    '''
 
+def get_upload_parser():
+    upload_parser = reqparse.RequestParser()
+    upload_parser.add_argument("student_list", location='files', type=FileStorage, required=False)
+    return upload_parser
+
+upload_parser = get_upload_parser()
 class HelloWorld(Resource):
     def get(self):
         return {'Greeting': 'Hello There'}
 
+@api.route("/download-pdf")
 class downloadResults(Resource):
+    """Downloads Individual PDFs"""
+
+    @api.expect(upload_parser)
     def post(self):
         try:
             files_uploaded = receive_upload(request)
@@ -38,8 +39,6 @@ class downloadResults(Resource):
                 return {'error': 'File could not be uploaded'}
         except Exception as e:
             return {'error': str(e)}
-    def get(self):
-        return make_response(html_page,200,headers)
 
 def receive_upload(request):
     try:
@@ -73,13 +72,8 @@ def get_marks(student_file):
                     continue
                 with open(os.path.join(DOWNLOADS_FOLDER, student.rstrip().upper())+'.pdf', 'wb') as result_file:
                     result_file.write(result.content)
-    return {'status': filename + ' saved successfully',
+    return {'status': student_file + ' saved successfully',
             'downloads': 'Complete',
-            'failed_downloads': failed_downlods
+            'failed_downloads': failed_downloads
             }
 
-api.add_resource(HelloWorld, '/', '/hello')
-api.add_resource(downloadResults, '/download-results')
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, port=5000)
