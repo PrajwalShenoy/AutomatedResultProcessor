@@ -4,4 +4,4 @@ bs4==0.0.1
 pandas==1.2.3
 PyPDF2==1.26.0
 tabula==1.0.5
-flask-restx==0.4.0
+flask-restx==0.5.1
